@@ -95,6 +95,12 @@ def sort_on(dict):
 
 
 def print_full_book_report(path, text):
+    """Print book report with header, footer, word count, and alpha character occurances
+
+    Args:
+        path (string): path to document
+        text (string): text of document
+    """
     print(get_header_string(path))
     print(get_word_count_string(text))
     print()
