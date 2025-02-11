@@ -2,7 +2,7 @@ def main():
     book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
     print_full_book_report(book_path, text)
-    
+    get_sorted_list_character_dict(text)
     # num_characters = get_character_dict(text)
     # print(num_characters)
     # list_num_characters = get_list_character_dict(num_characters)
@@ -68,9 +68,23 @@ def get_list_character_dict(char_dict):
     for key, value in char_dict.items():
         if key.isalpha():
             new_dict = {"char": key, "num": value}
-            print(new_dict)
             new_list.append(new_dict) 
     return new_list
+
+
+def get_sorted_list_character_dict(text):
+    """Get a sorted list of dictionarys of alpha characters by their occurance
+
+    Args:
+        text (string): text of document
+
+    Returns:
+        list: sorted list of dictionaries by their occurance
+    """
+    char_dict = get_character_dict(text)
+    list_num_char = get_list_character_dict(char_dict)
+    list_num_char.sort(reverse=True, key=sort_on)
+    return list_num_char
 
 
 def sort_on(dict):
