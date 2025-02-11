@@ -90,6 +90,7 @@ def print_full_book_report(path, text):
     print(get_header_string(path))
     print(get_word_count_string(text))
     print()
+    print(get_footer_string())
     
 
 def get_header_string(path):
@@ -117,6 +118,16 @@ def get_word_count_string(text):
     num_words = get_num_words(text)
     format_num_words = f"{num_words} words found in the document"
     return format_num_words
+
+
+def get_footer_string():
+    """Generates footer stirng for book report
+
+    Returns:
+        string: Neat final statement marking end of report
+    """
+    footer = "--- End report ---"
+    return footer
 
 
 main()
