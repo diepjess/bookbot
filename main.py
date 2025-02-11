@@ -1,13 +1,13 @@
 def main():
     book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
-    num_words = get_num_words(text)
-    print(f"{num_words} words in the file")
-    num_characters = get_character_dict(text)
+    print_full_book_report(book_path, text)
+    
+    # num_characters = get_character_dict(text)
     # print(num_characters)
-    list_num_characters = get_list_character_dict(num_characters)
-    list_num_characters.sort(reverse=True, key=sort_on)
-    print(list_num_characters)
+    # list_num_characters = get_list_character_dict(num_characters)
+    # list_num_characters.sort(reverse=True, key=sort_on)
+    # print(list_num_characters)
 
 
 def get_book_text(path):
@@ -84,6 +84,39 @@ def sort_on(dict):
         int: represents the occurances of a character.
     """
     return dict["num"]
+
+
+def print_full_book_report(path, text):
+    print(get_header_string(path))
+    print(get_word_count_string(text))
+    print()
+    
+
+def get_header_string(path):
+    """Generates header string for book report
+
+    Args:
+        path (string): path to text for report
+
+    Returns:
+        string: neat header that contains path to text for report
+    """
+    header = f"--- Begin report of {path} ---"
+    return header
+
+
+def get_word_count_string(text):
+    """Generates statement string for work count in report
+
+    Args:
+        text (string): Text of document for report
+
+    Returns:
+        string: Statement for total word count in document for report 
+    """
+    num_words = get_num_words(text)
+    format_num_words = f"{num_words} words found in the document"
+    return format_num_words
 
 
 main()
