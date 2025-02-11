@@ -2,12 +2,6 @@ def main():
     book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
     print_full_book_report(book_path, text)
-    get_sorted_list_character_dict(text)
-    # num_characters = get_character_dict(text)
-    # print(num_characters)
-    # list_num_characters = get_list_character_dict(num_characters)
-    # list_num_characters.sort(reverse=True, key=sort_on)
-    # print(list_num_characters)
 
 
 def get_book_text(path):
@@ -104,6 +98,7 @@ def print_full_book_report(path, text):
     print(get_header_string(path))
     print(get_word_count_string(text))
     print()
+    print_char_occurance(text)
     print(get_footer_string())
     
 
@@ -142,6 +137,19 @@ def get_footer_string():
     """
     footer = "--- End report ---"
     return footer
+
+
+def print_char_occurance(text):
+    """Prints character and occurance sorted by occurance of text
+
+    Args:
+        text (string): text of document
+    """
+    char_occurance = get_sorted_list_character_dict(text)
+    for item in char_occurance:
+        char = item["char"]
+        num = item["num"]
+        print(f"The '{char}' character was found {num} times")
 
 
 main()
