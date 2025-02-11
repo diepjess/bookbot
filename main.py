@@ -4,7 +4,8 @@ def main():
     num_words = get_num_words(text)
     print(f"{num_words} words in the file")
     num_characters = get_character_dict(text)
-    print(num_characters)
+    # print(num_characters)
+    print(get_list_character_dict(num_characters))
 
 
 def get_book_text(path):
@@ -50,6 +51,24 @@ def get_character_dict(text):
         else:
             character_count[char] = 1
     return character_count
+
+
+def get_list_character_dict(char_dict):
+    """Get a list of dictionaries of alpha characters and their count.
+
+    Args:
+        dict (dict): A dictionary of the character count in text. Expecting the return value of get_character_dict
+
+    Returns:
+        list: A list of dictionaries. Each dictionary has keys: "char", "num" where character is an alpha character and num is its count
+    """
+    new_list = []
+    for key, value in char_dict.items():
+        if key.isalpha():
+            new_dict = {"char": key, "num": value}
+            print(new_dict)
+            new_list.append(new_dict) 
+    return new_list
 
 
 main()
