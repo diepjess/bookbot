@@ -5,7 +5,9 @@ def main():
     print(f"{num_words} words in the file")
     num_characters = get_character_dict(text)
     # print(num_characters)
-    print(get_list_character_dict(num_characters))
+    list_num_characters = get_list_character_dict(num_characters)
+    list_num_characters.sort(reverse=True, key=sort_on)
+    print(list_num_characters)
 
 
 def get_book_text(path):
@@ -69,6 +71,19 @@ def get_list_character_dict(char_dict):
             print(new_dict)
             new_list.append(new_dict) 
     return new_list
+
+
+def sort_on(dict):
+    """A function that takes a dictionary and returns the value of the "num" key.
+    Helper for help us sort a list of dictionaries by the value in the "num  key"
+
+    Args:
+        dict (dict): a dictionary where there is a "num" key that represents the occurances of a character
+
+    Returns:
+        int: represents the occurances of a character.
+    """
+    return dict["num"]
 
 
 main()
