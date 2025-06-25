@@ -16,6 +16,6 @@ git clone https://github.com/diepjess/bookbot
 # Navigate to project directory
 cd bookbot
 
-# Python usage with example path to text in bootbot/books/frankenstein.txt
+# Python usage with example path to text in bookbot/books/frankenstein.txt
 python3 main.py books/frankenstein.txt
 ```
