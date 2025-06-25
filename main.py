@@ -1,3 +1,6 @@
+from stats import get_num_words
+
+
 def main():
     book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
@@ -15,19 +18,6 @@ def get_book_text(path):
     """
     with open(path) as f:
         return f.read()
-
-
-def get_num_words(text):
-    """Get number words in text
-
-    Args:
-        text (string): text of book as a single string
-
-    Returns:
-        int: number of words in text
-    """
-    words = text.split()
-    return len(words)
 
 
 def get_character_dict(text):
