@@ -1,4 +1,7 @@
-from stats import get_num_words, get_character_dict
+from stats import (
+    get_num_words, 
+    get_sorted_list_character_dict,
+)
 
 
 def main():
@@ -18,51 +21,6 @@ def get_book_text(path):
     """
     with open(path) as f:
         return f.read()
-
-
-def get_list_character_dict(char_dict):
-    """Get a list of dictionaries of alpha characters and their count.
-
-    Args:
-        dict (dict): A dictionary of the character count in text. Expecting the return value of get_character_dict
-
-    Returns:
-        list: A list of dictionaries. Each dictionary has keys: "char", "num" where character is an alpha character and num is its count
-    """
-    new_list = []
-    for key, value in char_dict.items():
-        if key.isalpha():
-            new_dict = {"char": key, "num": value}
-            new_list.append(new_dict) 
-    return new_list
-
-
-def get_sorted_list_character_dict(text):
-    """Get a sorted list of dictionarys of alpha characters by their occurance
-
-    Args:
-        text (string): text of document
-
-    Returns:
-        list: sorted list of dictionaries by their occurance
-    """
-    char_dict = get_character_dict(text)
-    list_num_char = get_list_character_dict(char_dict)
-    list_num_char.sort(reverse=True, key=sort_on)
-    return list_num_char
-
-
-def sort_on(dict):
-    """A function that takes a dictionary and returns the value of the "num" key.
-    Helper for help us sort a list of dictionaries by the value in the "num  key"
-
-    Args:
-        dict (dict): a dictionary where there is a "num" key that represents the occurances of a character
-
-    Returns:
-        int: represents the occurances of a character.
-    """
-    return dict["num"]
 
 
 def print_full_book_report(path, text):
