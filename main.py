@@ -23,7 +23,7 @@ def get_book_text(path):
     Returns:
         string: text of the book as single string
     """
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         return f.read()
 
 
