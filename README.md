@@ -8,6 +8,8 @@ Bookbot is a simple command-line program that reads text from a file from provid
   - [Boot.dev](#bootdev)
   - [Usage](#usage)
 
+![demo](./demo.mp4)
+
 - [bookbot](#bookbot)
   - [Boot.dev](#bootdev)
   - [Usage](#usage)
