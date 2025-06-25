@@ -1,6 +1,12 @@
+
+
+
 # bookbot
 
 Bookbot is a simple command-line program that reads text from a file from provided book path and generates a report about the text.
+- [bookbot](#bookbot)
+  - [Boot.dev](#bootdev)
+  - [Usage](#usage)
 
 - [bookbot](#bookbot)
   - [Boot.dev](#bootdev)
