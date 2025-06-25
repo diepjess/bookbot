@@ -3,7 +3,7 @@
 Bookbot is a simple command-line program that reads text from a file from provided book path and generates a report about the text.
 
 ## Boot.dev
-BookBot is my first [Boot.dev](https://www.boot.dev) project! (Required for submission) \
+BookBot is my first [Boot.dev](https://www.boot.dev) project! (Required for submission)
 
 ## Usage
 ```bash
